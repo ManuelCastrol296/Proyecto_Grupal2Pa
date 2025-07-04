@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="primefaces">
+<h:head>
+   <title>Menú de Transacciones</title>
+</h:head>
+
+<h:body>
+   <h:form>
+      <p:panel header="Bienvenido" style="width: 400px; margin: 80px auto;">
+         <p:messages id="msgs" autoUpdate="true" showDetail="true" closable="true"/>
+
+         <p:panelGrid columns="2" columnClasses="label,value" style="width:100%">
+            <h:outputLabel value="Cuenta:" />
+            <h:outputText value="#{cajeroBean.cuentaIngresada}" />
+
+            <h:outputLabel value="Saldo actual:" />
+            <h:outputText value="#{cajeroBean.clienteActual.saldo}" />
+         </p:panelGrid>
+
+         <p:spacer height="20"/>
+
+         <p:commandButton value="Realizar Retiro"
+                          action="retiro.xhtml?faces-redirect=true"
+                          icon="pi pi-money-bill"
+                          styleClass="ui-button-success"
+                          style="width:100%; margin-bottom:10px"/>
+
+         <p:commandButton value="Realizar Depósito"
+                          action="deposito.xhtml?faces-redirect=true"
+                          icon="pi pi-wallet"
+                          styleClass="ui-button-info"
+                          style="width:100%; margin-bottom:10px"/>
+
+         <p:commandButton value="Ayuda"
+                          action="ayuda.xhtml?faces-redirect=true"
+                          icon="pi pi-question-circle"
+                          styleClass="ui-button-secondary"
+                          style="width:100%; margin-bottom:10px"/>
+
+         <p:commandButton value="Cerrar Sesión"
+                          action="index.xhtml?faces-redirect=true"
+                          icon="pi pi-sign-out"
+                          styleClass="ui-button-danger"
+                          style="width:100%"/>
+      </p:panel>
+   </h:form>
+</h:body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="primefaces">
+
+<h:head>
+    <title>Ayuda</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="Ayuda - Aplicativo Cajero Automático"
+                 style="width: 600px; margin: 60px auto; text-align: center;">
+
+            <h2>Integrantes</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li>🔹 Manuel Fernando Castro (202310080221)</li>
+                <li>🔹 Ovidio Isai Castillo Mejía (202210010892)</li>
+                <li>🔹 Keiri Jaranessi Martínez Veliz (201920020088)</li>
+            </ul>
+
+            <h2>Datos de la Clase</h2>
+            <p>📘 <strong>Clase:</strong> Programación Web II</p>
+            <p>👨‍🏫 <strong>Profesor:</strong> Ing. Joseph Cooper</p>
+
+            <p:spacer height="20" />
+
+            <p:commandButton value="Volver al Menú"
+                             action="transaccion.xhtml?faces-redirect=true"
+                             icon="pi pi-arrow-left"
+                             styleClass="ui-button-secondary" />
+        </p:panel>
+    </h:form>
+</h:body>
+
+</html>

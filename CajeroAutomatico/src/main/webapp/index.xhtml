@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="primefaces" >
+<h:head>
+    <title>Login - Cajero</title>
+</h:head>
+<h:body>
+
+    <h:form>
+        <p:panel header="Ingreso al Cajero" style="width: 700px; margin: auto; margin-top: 200px">
+            <p:messages id="msgs" showDetail="true" autoUpdate="true" closable="true"/>
+
+            <p:outputLabel value="Número de cuenta:" for="cuenta" />
+            <p:inputText id="cuenta" value="#{cajeroBean.cuentaIngresada}" required="true" />
+
+            <p:outputLabel value="PIN:" for="pin" />
+            <p:password id="pin" value="#{cajeroBean.pinIngresado}" required="true" />
+
+            <p:commandButton value="Ingresar"
+                             action="#{cajeroBean.validarCliente}"
+                             update="msgs"
+                             styleClass="p-mt-3"
+                             icon="pi pi-sign-in" />
+        </p:panel>
+    </h:form>
+
+</h:body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="primefaces">
+<h:head>
+   <title>Depósito</title>
+</h:head>
+
+<h:body>
+   <h:form>
+      <p:panel header="Depósito de Cuenta" style="width: 500px; margin: 80px auto;">
+         <p:messages id="msgs" showDetail="true" autoUpdate="true" closable="true"/>
+
+         <p:outputLabel for="cuenta" value="Número de Cuenta:"/>
+         <p:inputText id="cuenta" value="#{cajeroBean.cuentaIngresada}" required="true" style="width:100%"/>
+         <p:spacer height="10"/>
+
+         <p:outputLabel for="pin" value="PIN:"/>
+         <p:password id="pin" value="#{cajeroBean.pinIngresado}" required="true" style="width:100%"/>
+         <p:spacer height="10"/>
+
+         <p:outputLabel for="monto" value="Monto a Depositar:"/>
+         <p:inputText id="monto" value="#{cajeroBean.monto}" required="true" style="width:100%">
+            <f:convertNumber/>
+         </p:inputText>
+         <p:spacer height="10"/>
+
+         <p:commandButton value="Depositar" action="#{cajeroBean.depositar}" icon="pi pi-check"
+                          update="msgs" styleClass="ui-button-success" style="margin-right:40px"/>
+         <p:commandButton value="Volver" action="transaccion.xhtml" icon="pi pi-arrow-left"
+                          styleClass="ui-button-secondary"/>
+      </p:panel>
+   </h:form>
+</h:body>
+</html>
